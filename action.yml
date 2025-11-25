@@ -1,7 +1,10 @@
-name: "Hello World Action"
-description: "A simple action that prints Hello World"
+name: "Hello World Composite Action"
+description: "A composite action that prints Hello World and runs another action"
 author: "your-name"
 
 runs:
-  using: "node16"
-  main: "index.js"
+  using: "composite"
+  steps:
+    - name: Run another action (checkout)
+      uses: TESTORGs3rdz0tests/testaction1@main
+
